@@ -1,0 +1,11 @@
+void __fastcall rw::core::atom::StaticAtomTable::Fixup(rw::core::atom::StaticAtomTable *this, void *__formal)
+{
+  rw::core::atom::StaticAtomTable::Members *v2; // r11
+
+  v2 = (rw::core::atom::StaticAtomTable::Members *)((char *)this->table + (unsigned int)this);
+  this->table = v2;
+  v2->atomNames += (unsigned int)this;
+  this->table->atomNameTail += (unsigned int)this;
+  this->table->stringIndex = (unsigned int *)((char *)this->table->stringIndex + (unsigned int)this);
+  this->table->idArray = (unsigned __int16 *)((char *)this->table->idArray + (unsigned int)this);
+}

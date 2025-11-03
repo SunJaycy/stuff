@@ -1,0 +1,6 @@
+unsigned int __fastcall visualdebugger::AttributeRef<visualdebugger::physics::AttributeJointLimits>::Serialize(
+        visualdebugger::AttributeRef<visualdebugger::Attribute> *this,
+        visualdebugger::ISerializable::Buffer *buffer)
+{
+  return visualdebugger::ISerializable::Buffer::AddWord(buffer, &this->m_value);
+}

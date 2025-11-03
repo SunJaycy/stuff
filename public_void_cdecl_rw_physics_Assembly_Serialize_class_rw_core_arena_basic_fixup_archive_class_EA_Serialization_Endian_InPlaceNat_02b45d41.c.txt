@@ -1,0 +1,7 @@
+void __fastcall rw::physics::Assembly::Serialize<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>(
+        rw::physics::Assembly *this,
+        rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> *ar,
+        unsigned int version)
+{
+  JUMPOUT(0x834598B8);
+}

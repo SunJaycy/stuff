@@ -1,0 +1,18 @@
+void __fastcall rw::collision::KDTreeMappedArray::Serialize<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>(
+        rw::collision::KDTreeMappedArray *this,
+        rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> *ar,
+        unsigned int __formal)
+{
+  rw::collision::Volume *v5; // r7
+  rw::collision::KDTree *v6; // r8
+
+  v5 = (rw::collision::Volume *)((char *)this->m_volumes + (unsigned int)ar->mBase);
+  this->m_volumes = v5;
+  EA::Serialization::BaseArchive<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>::operator&<rw::collision::Volume>(
+    (EA::Serialization::BaseArchive<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> > *)v5,
+    (const EA::Serialization::NamedStaticArray<rw::collision::Volume> *)this->m_numVolumes);
+  v6 = (rw::collision::KDTree *)((char *)this->m_map + (unsigned int)ar->mBase);
+  this->m_map = v6;
+  v6->m_branchNodes = (rw::collision::KDTree::BranchNode *)((char *)v6->m_branchNodes + (unsigned int)ar->mBase);
+  this->m_vTable = (rw::collision::Aggregate::VTable *)-2090744852;
+}

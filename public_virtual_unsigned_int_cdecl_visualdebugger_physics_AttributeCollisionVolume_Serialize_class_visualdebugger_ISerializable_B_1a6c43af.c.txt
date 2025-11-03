@@ -1,0 +1,6 @@
+void __fastcall visualdebugger::physics::AttributeCollisionVolume::Serialize(
+        visualdebugger::physics::AttributeCollisionVolume *this,
+        visualdebugger::ISerializable::Buffer *buffer)
+{
+  JUMPOUT(0x834598B8);
+}

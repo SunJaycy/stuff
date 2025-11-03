@@ -1,0 +1,16 @@
+void __fastcall rw::core::arena::FixupContextImpl::Serialize(
+        rw::core::arena::FixupContextImpl *this,
+        rw::core::arena::ArenaDictEntry *entry)
+{
+  int v3; // r11
+  int (__fastcall *v4)(void *, rw::core::arena::FixupContextImpl *); // r11
+
+  v3 = *(_DWORD *)(*(_DWORD *)(**(_DWORD **)(this[13].m_isFixupOk[13] + 8) + 8) + 4 * entry->typeIndex);
+  this[13].m_fixupAtomTable = (const rw::core::atom::StaticAtomTable *)entry->reloc;
+  v4 = *(int (__fastcall **)(void *, rw::core::arena::FixupContextImpl *))(v3 + 12);
+  if ( v4 )
+  {
+    if ( !v4(entry->ptr, this) )
+      *this->m_isFixupOk = 0;
+  }
+}

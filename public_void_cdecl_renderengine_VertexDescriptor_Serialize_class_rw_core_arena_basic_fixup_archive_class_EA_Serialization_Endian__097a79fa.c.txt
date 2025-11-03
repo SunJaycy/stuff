@@ -1,0 +1,54 @@
+void __fastcall renderengine::VertexDescriptor::Serialize<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>(
+        renderengine::VertexDescriptor *this,
+        rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> *ar,
+        unsigned int version,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        int a18,
+        int a19,
+        int a20,
+        int a21,
+        int a22,
+        int a23,
+        int a24,
+        int a25,
+        int a26,
+        char *a27,
+        char *a28,
+        char *a29,
+        int a30,
+        int a31)
+{
+  bool v32; // r3
+
+  if ( version < 2 )
+  {
+    a27 = (char *)-2109076588;
+    a28 = (char *)-2109076688;
+    a29 = (char *)-2109076732;
+    a30 = 394;
+    a31 = 1;
+    v32 = rw::core::debug::AssertMacroHelper::AssertFormatted(
+            (rw::core::debug::AssertMacroHelper *)&a27,
+            "Element strides are only present in archive versions 2 and above");
+  }
+  else
+  {
+    v32 = 0;
+  }
+  if ( v32 )
+    DebugBreak();
+  renderengine::VertexDescriptor::CreateD3DObject(this);
+}

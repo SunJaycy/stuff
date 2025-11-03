@@ -1,0 +1,6 @@
+unsigned int __fastcall visualdebugger::AttributeString<32>::Serialize(
+        visualdebugger::AttributeString<32> *this,
+        visualdebugger::ISerializable::Buffer *buffer)
+{
+  return visualdebugger::ISerializable::Buffer::AddBytes(buffer, this->m_value, 0x20u);
+}

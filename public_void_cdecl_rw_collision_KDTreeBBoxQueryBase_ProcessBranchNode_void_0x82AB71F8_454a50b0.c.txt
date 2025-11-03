@@ -1,0 +1,4 @@
+void __fastcall rw::collision::KDTreeBBoxQueryBase::ProcessBranchNode(rw::collision::KDTreeBBoxQueryBase *this)
+{
+  JUMPOUT(0x834598B8);
+}

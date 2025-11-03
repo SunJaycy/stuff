@@ -1,0 +1,39 @@
+void __fastcall renderengine::VertexBuffer::Serialize<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>(
+        renderengine::VertexBuffer *this,
+        rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> *ar,
+        unsigned int __formal,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        __int64 a9,
+        __int64 a10,
+        __int64 a11,
+        __int64 a12,
+        __int64 a13,
+        __int64 a14,
+        __int64 a15,
+        __int64 a16,
+        __int64 a17,
+        __int128 a18)
+{
+  void *v19; // r3
+  __int16 v20; // r3
+  unsigned int v21; // r10
+
+  HIDWORD(a18) = &this->Format;
+  *(_QWORD *)((char *)&a18 + 4) = 0x824A040800000002uLL;
+  EA::Serialization::BaseArchive<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>::operator&<EA::Serialization::Serializable_GPUVERTEX_FETCH_CONSTANT>(
+    ar,
+    (const EA::Serialization::NamedInternalPointerContainer<EA::Serialization::Serializable_GPUVERTEX_FETCH_CONSTANT> *)&a18);
+  v19 = (void *)(this->Format.dword[0] & 0xFFFFFFFC);
+  if ( v19 )
+  {
+    v20 = XQueryMemoryProtect(v19);
+    v21 = this->Common & 0xFFDFFFFF;
+    if ( (v20 & 0x600) == 0 )
+      v21 = this->Common | 0x200000;
+    this->Common = v21;
+  }
+}

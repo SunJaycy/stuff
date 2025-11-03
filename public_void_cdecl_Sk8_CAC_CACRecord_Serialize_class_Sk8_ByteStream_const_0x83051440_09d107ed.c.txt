@@ -1,0 +1,4 @@
+void __fastcall Sk8::CAC::CACRecord::Serialize(Sk8::CAC::CACRecord *this, Sk8::ByteStream *outstream)
+{
+  JUMPOUT(0x834598B8);
+}

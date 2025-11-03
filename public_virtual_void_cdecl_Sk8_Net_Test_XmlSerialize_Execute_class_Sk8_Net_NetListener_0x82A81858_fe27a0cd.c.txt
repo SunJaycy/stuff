@@ -1,0 +1,6 @@
+void __fastcall Sk8::Net::Test_XmlSerialize::Execute(
+        Sk8::Net::Test_XmlSerialize *this,
+        Sk8::Net::NetListener *listener)
+{
+  JUMPOUT(0x834598B8);
+}

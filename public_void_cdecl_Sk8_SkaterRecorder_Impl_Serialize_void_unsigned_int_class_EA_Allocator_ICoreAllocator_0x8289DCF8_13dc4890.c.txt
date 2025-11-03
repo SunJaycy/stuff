@@ -1,0 +1,8 @@
+void __fastcall Sk8::SkaterRecorder::Impl::Serialize(
+        Sk8::SkaterRecorder::Impl *this,
+        void **data,
+        unsigned int *size,
+        EA::Allocator::ICoreAllocator *allocator)
+{
+  JUMPOUT(0x834598B8);
+}

@@ -1,0 +1,43 @@
+void __fastcall rw::physics::PartDefinition::Serialize<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>(
+        rw::physics::PartDefinition *this,
+        rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> *ar,
+        unsigned int __formal,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        int a18,
+        int a19,
+        int a20,
+        int a21,
+        int a22,
+        int a23,
+        int a24,
+        int a25,
+        int a26,
+        void *p_m_inverseBodyLTM)
+{
+  this->m_volume = (rw::collision::Volume *)rw::core::arena::Arena::IdToObject(ar->mArena, (unsigned int)this->m_volume);
+  p_m_inverseBodyLTM = &this->m_inverseBodyLTM;
+  rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>::DoRegisterAddress(
+    ar,
+    (const void *const *)&p_m_inverseBodyLTM);
+  p_m_inverseBodyLTM = &this->m_inertia;
+  rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>::DoRegisterAddress(
+    ar,
+    (const void *const *)&p_m_inverseBodyLTM);
+  p_m_inverseBodyLTM = &this->m_material;
+  rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>::DoRegisterAddress(
+    ar,
+    (const void *const *)&p_m_inverseBodyLTM);
+}

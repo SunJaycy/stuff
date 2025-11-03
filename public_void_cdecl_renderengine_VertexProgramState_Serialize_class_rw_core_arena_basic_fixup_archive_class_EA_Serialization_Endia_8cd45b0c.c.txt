@@ -1,0 +1,11 @@
+void __fastcall renderengine::VertexProgramState::Serialize<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>(
+        renderengine::VertexProgramState *this,
+        rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> *ar,
+        unsigned int __formal)
+{
+  *(_DWORD *)&this[32] = rw::core::arena::Arena::IdToObject(ar->mArena, *(_DWORD *)&this[32]);
+  *(_DWORD *)&this[36] = rw::core::arena::Arena::IdToObject(ar->mArena, *(_DWORD *)&this[36]);
+  *(_DWORD *)this = rw::core::arena::Arena::IdToObject(ar->mArena, *(_DWORD *)this);
+  XGRegisterVertexShader((D3DVertexShader *)&this[44], *(void **)this);
+  *(_DWORD *)&this[40] = 1;
+}

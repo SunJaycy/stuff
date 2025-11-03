@@ -1,0 +1,7 @@
+void __fastcall Sk8::Debug::ShapeCollection::Serialize(
+        Sk8::Debug::ShapeCollection *this,
+        Sk8::Debug::eDebugShapeType shapetype,
+        DataSystem::DataProvider *dataprovider)
+{
+  JUMPOUT(0x834598B8);
+}

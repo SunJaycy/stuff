@@ -1,0 +1,14 @@
+void __fastcall EA::Serialization::Serialize<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>,rw::collision::SimpleMappedArray>(
+        rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> *archive,
+        rw::collision::SimpleMappedArray *obj,
+        const unsigned int version)
+{
+  rw::collision::Volume *v4; // r7
+
+  v4 = (rw::collision::Volume *)((char *)archive->mBase + (unsigned int)obj->m_volumes);
+  obj->m_volumes = v4;
+  EA::Serialization::BaseArchive<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>::operator&<rw::collision::Volume>(
+    (EA::Serialization::BaseArchive<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> > *)v4,
+    (const EA::Serialization::NamedStaticArray<rw::collision::Volume> *)obj->m_numVolumes);
+  obj->m_vTable = (rw::collision::Aggregate::VTable *)-2090744824;
+}

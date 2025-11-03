@@ -1,0 +1,6 @@
+void __fastcall rw::core::arena::UnfixContextImpl::Serialize(
+        rw::core::arena::UnfixContextImpl *this,
+        const void **object)
+{
+  JUMPOUT(0x834598B8);
+}

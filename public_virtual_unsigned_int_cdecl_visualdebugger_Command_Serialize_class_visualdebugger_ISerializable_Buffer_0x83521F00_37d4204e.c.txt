@@ -1,0 +1,6 @@
+int __fastcall visualdebugger::Command::Serialize(
+        visualdebugger::Command *this,
+        visualdebugger::ISerializable::Buffer *buffer)
+{
+  return this->m_root.Serialize(&this->m_root, buffer);
+}

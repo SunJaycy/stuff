@@ -1,0 +1,4 @@
+void __fastcall Sk8::Debug::DebugOverlay::Serialize(Sk8::Debug::DebugOverlay *this, DataSystem::DataProvider *dp)
+{
+  JUMPOUT(0x834598B8);
+}

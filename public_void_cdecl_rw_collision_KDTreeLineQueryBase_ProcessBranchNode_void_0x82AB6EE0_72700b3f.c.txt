@@ -1,0 +1,127 @@
+void __fastcall rw::collision::KDTreeLineQueryBase::ProcessBranchNode(
+        rw::collision::KDTreeLineQueryBase *this,
+        double a2,
+        double a3,
+        double a4,
+        double a5,
+        double a6,
+        double a7,
+        double a8,
+        double a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        int a18,
+        int a19,
+        int a20,
+        int a21,
+        int a22,
+        int a23,
+        int a24,
+        int a25,
+        int a26,
+        int a27,
+        int a28,
+        int a29,
+        int a30,
+        int a31,
+        int a32,
+        int a33,
+        int a34,
+        float a35,
+        float a36,
+        __int64 a37,
+        __int64 m_nodeRef,
+        __int64 a39,
+        int a40,
+        int a41,
+        int a42,
+        int a43,
+        int a44)
+{
+  unsigned int v38; // r11
+  rw::collision::KDTreeLineQueryBase::StackElement *v39; // r8
+  rw::collision::KDTree::BranchNode *v45; // r11
+  int v48; // r10
+  double v49; // fp10
+  double v50; // fp5
+  BOOL v51; // r8
+  double v52; // fp0
+  double v53; // fp13
+  rw::collision::KDTree::NodeRef *v55; // r4
+  rw::collision::KDTreeLineQueryBase::StackElement *v56; // r9
+  BOOL v58; // r10
+  rw::collision::KDTree::NodeRef *v60; // r8
+  rw::collision::KDTreeLineQueryBase::StackElement *v61; // r7
+
+  v38 = this->m_top - 1;
+  this->m_top = v38;
+  v39 = &this->m_stack[v38];
+  m_nodeRef = (__int64)v39->m_nodeRef;
+  a39 = *(_QWORD *)&v39->m_pa;
+  if ( HIDWORD(m_nodeRef) != -1
+    && rw::core::debug::CallDebugPrintAssertCallback(
+         "cur.m_nodeRef.m_content == rwcKDTREE_BRANCH_NODE",
+         "D:\\checkouts\\sk82\\main\\packages\\rw\\rwphysics_base\\5.05.00/include/cmn\\rw/collision/kdtreelinequerybase.h",
+         "rw::collision::KDTreeLineQueryBase::ProcessBranchNode",
+         0xD9u,
+         0,
+         0,
+         1u) )
+  {
+    DebugBreak();
+  }
+  _R8 = &this->m_lineClipper.m_recip;
+  _R5 = &a40;
+  _R9 = &this->m_lineClipper;
+  _R7 = &a35;
+  __asm
+  {
+    lvx128    v62, r0, r8
+    stvx128   v62, r0, r5
+  }
+  v45 = &this->m_kdtree->m_branchNodes[m_nodeRef];
+  __asm { lvx128    v63, r0, r9 }
+  _R10 = &this->m_lineClipper.m_padding;
+  __asm { stvx128   v63, r0, r7 }
+  _R3 = &a44;
+  __asm { lvx128    v61, r0, r10 }
+  v48 = 4 * v45->m_axis;
+  __asm { stvx128   v61, r0, r3 }
+  v49 = *(float *)((char *)&a40 + v48);
+  v50 = (float)((float)(v45->m_extents[1] - *(float *)((char *)&a44 + v48)) - *(float *)((char *)&a35 + v48));
+  a35 = (float)((float)(v45->m_extents[0] + *(float *)((char *)&a44 + v48)) - *(float *)((char *)&a35 + v48))
+      * *(float *)((char *)&a40 + v48);
+  a36 = (float)v50 * (float)v49;
+  v51 = v49 > 0.0;
+  v52 = *((float *)&a39 + 1);
+  v53 = *(float *)&a39;
+  if ( *((float *)&a39 + 1) > (double)*(&a35 + v51) )
+  {
+    _FP11 = (float)(*(float *)&a39 - *(&a35 + v51));
+    v55 = &v45->m_childRefs[v51];
+    v56 = &this->m_stack[this->m_top];
+    __asm { fsel      f10, f11, f13, f12 }
+    v56->m_nodeRef.m_content = v55->m_content;
+    v56->m_nodeRef.m_index = v55->m_index;
+    this->m_stack[this->m_top].m_pa = _FP10;
+    this->m_stack[this->m_top++].m_pb = v52;
+  }
+  v58 = !v51;
+  if ( v53 < *(&a35 + v58) )
+  {
+    _FP11 = (float)((float)v52 - *(&a35 + v58));
+    v60 = &v45->m_childRefs[v58];
+    v61 = &this->m_stack[this->m_top];
+    __asm { fsel      f10, f11, f12, f0 }
+    v61->m_nodeRef.m_content = v60->m_content;
+    v61->m_nodeRef.m_index = v60->m_index;
+    this->m_stack[this->m_top].m_pa = v53;
+    this->m_stack[this->m_top++].m_pb = _FP10;
+  }
+}

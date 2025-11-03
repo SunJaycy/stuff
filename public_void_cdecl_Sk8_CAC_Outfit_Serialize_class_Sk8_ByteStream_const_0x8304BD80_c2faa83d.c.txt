@@ -1,0 +1,4 @@
+void __fastcall Sk8::CAC::Outfit::Serialize(Sk8::CAC::Outfit *this, Sk8::ByteStream *outstream)
+{
+  JUMPOUT(0x834598B8);
+}

@@ -1,0 +1,10 @@
+void __fastcall rw::collision::ClusteredMeshCluster::Get3Vertices(
+        rw::collision::ClusteredMeshCluster *this,
+        rw::math::vpu::Vector3 *out,
+        unsigned __int8 v0,
+        unsigned __int8 v1,
+        unsigned __int8 v2,
+        const float *g)
+{
+  JUMPOUT(0x834598B8);
+}
