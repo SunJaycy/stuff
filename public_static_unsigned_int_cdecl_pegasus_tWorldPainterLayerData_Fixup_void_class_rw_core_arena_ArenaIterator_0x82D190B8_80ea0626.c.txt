@@ -1,0 +1,25 @@
+unsigned int __fastcall pegasus::tWorldPainterLayerData::Fixup(
+        unsigned int *ptr,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  rw::core::arena::Arena *m_arena; // r30
+  bool v4; // r3
+
+  m_arena = iterator->m_arena;
+  if ( m_arena )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F5B90[2404],
+           &byte_822F5B90[2340],
+           &byte_822F5B90[2300],
+           0x79u,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  *ptr = (unsigned int)rw::core::arena::Arena::IdToObject(m_arena, *ptr);
+  ptr[1] = (unsigned int)rw::core::arena::Arena::IdToObject(m_arena, ptr[1]);
+  return 1;
+}

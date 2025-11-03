@@ -1,0 +1,4 @@
+void __fastcall pegasus::tAntiFrustumData::Unfix(void *ptr, rw::core::arena::SizeAndAlignment *offset)
+{
+  JUMPOUT(0x834598B8);
+}

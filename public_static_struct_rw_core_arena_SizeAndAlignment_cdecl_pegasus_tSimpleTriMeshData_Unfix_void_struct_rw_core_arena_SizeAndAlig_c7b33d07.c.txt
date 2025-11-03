@@ -1,0 +1,26 @@
+rw::core::arena::SizeAndAlignment *__fastcall pegasus::tSimpleTriMeshData::Unfix(
+        void *ptr,
+        rw::core::arena::SizeAndAlignment *offset)
+{
+  bool v4; // r3
+  rw::core::arena::SizeAndAlignment *result; // r3
+
+  if ( offset->iterator->m_arena )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F4528[4340],
+           &byte_822F4528[4272],
+           &byte_822F4528[3788],
+           0x5Eu,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  result = offset;
+  *((_DWORD *)ptr + 3) -= ptr;
+  *((_DWORD *)ptr + 4) -= ptr;
+  *((_DWORD *)ptr + 5) -= ptr;
+  return result;
+}

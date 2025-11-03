@@ -1,0 +1,88 @@
+rw::core::arena::SizeAndAlignment *__fastcall pegasus::tCMaterialData::Unfix(
+        void *ptr,
+        rw::core::arena::SizeAndAlignment *offset)
+{
+  bool v4; // r3
+  int v5; // r10
+  int v6; // r9
+  int v7; // r7
+  int v8; // r11
+  int v9; // r8
+  int v10; // r6
+  bool v11; // cr58
+  _DWORD *v12; // r11
+  _DWORD *v13; // r11
+  int v14; // r10
+  _DWORD *v15; // r11
+  int v16; // r10
+  int v17; // r9
+  int v18; // r9
+
+  if ( offset->iterator->m_arena )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F3598[96],
+           &byte_822F3598[32],
+           byte_822F3598,
+           0x71u,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  v5 = *(_DWORD *)ptr;
+  v6 = *((_DWORD *)ptr + 1);
+  v7 = *((_DWORD *)ptr + 2);
+  v8 = *((_DWORD *)ptr + 3);
+  v9 = *((_DWORD *)ptr + 4);
+  v10 = *((_DWORD *)ptr + 5);
+  v11 = *(_DWORD *)ptr == 0;
+  *((_DWORD *)ptr + 3) = v8 - (_DWORD)ptr;
+  *((_DWORD *)ptr + 4) -= ptr;
+  *((_DWORD *)ptr + 5) -= ptr;
+  *((_DWORD *)ptr + 6) -= ptr;
+  if ( !v11 )
+  {
+    v12 = (_DWORD *)(v8 + 4);
+    do
+    {
+      --v5;
+      *v12 -= ptr;
+      v12 += 2;
+    }
+    while ( v5 );
+  }
+  if ( v6 )
+  {
+    v13 = (_DWORD *)(v9 + 4);
+    v14 = v6;
+    do
+    {
+      --v14;
+      *v13 -= ptr;
+      v13 += 2;
+    }
+    while ( v14 );
+  }
+  if ( v7 )
+  {
+    v15 = (_DWORD *)(v10 + 8);
+    v16 = v7;
+    do
+    {
+      v17 = *(v15 - 2);
+      if ( v17 )
+        *(v15 - 2) = v17 - (_DWORD)ptr;
+      v18 = *(v15 - 1);
+      if ( v18 )
+        *(v15 - 1) = v18 - (_DWORD)ptr;
+      if ( *v15 )
+        *v15 -= ptr;
+      --v16;
+      v15 += 3;
+    }
+    while ( v16 );
+  }
+  return offset;
+}

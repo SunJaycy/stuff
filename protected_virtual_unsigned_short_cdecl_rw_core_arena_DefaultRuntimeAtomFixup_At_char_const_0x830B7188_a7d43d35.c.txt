@@ -1,0 +1,6 @@
+int __fastcall rw::core::arena::DefaultRuntimeAtomFixup::At(
+        rw::core::arena::DefaultRuntimeAtomFixup *this,
+        const char *atomString)
+{
+  return rw::core::atom::StaticAtomTable::Register(&rw::core::atom::globalAtomTable, atomString);
+}

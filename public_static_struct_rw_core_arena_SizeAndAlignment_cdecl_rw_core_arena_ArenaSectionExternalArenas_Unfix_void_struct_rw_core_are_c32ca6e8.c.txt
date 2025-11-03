@@ -1,0 +1,6 @@
+void __fastcall rw::core::arena::ArenaSectionExternalArenas::Unfix(
+        void *obj,
+        rw::core::arena::SizeAndAlignment *offset)
+{
+  JUMPOUT(0x834598B8);
+}

@@ -1,0 +1,57 @@
+rw::core::arena::SizeAndAlignment *__fastcall pegasus::tAIPath::Unfix(
+        _DWORD *pV,
+        rw::core::arena::SizeAndAlignment *pOffset)
+{
+  rw::core::arena::SizeAndAlignment *result; // r3
+  int v4; // r7
+  int v5; // r8
+  int v6; // r10
+  int v7; // r9
+  int v8; // r7
+  int v9; // r8
+  _DWORD *v10; // r10
+  int v11; // r10
+  int v12; // r10
+  int v13; // r10
+
+  result = pOffset;
+  v4 = 0;
+  if ( (int)pV[13] > 0 )
+  {
+    v5 = 0;
+    do
+    {
+      v6 = pV[12] + v5;
+      v7 = *(_DWORD *)(v6 + 32);
+      if ( v7 )
+        *(_DWORD *)(v6 + 32) = v7 - v6;
+      ++v4;
+      v5 += 44;
+    }
+    while ( v4 < pV[13] );
+  }
+  v8 = 0;
+  if ( (int)pV[16] > 0 )
+  {
+    v9 = 0;
+    do
+    {
+      v10 = (_DWORD *)(v9 + pV[15]);
+      if ( *v10 )
+        *v10 -= v10;
+      ++v8;
+      v9 += 12;
+    }
+    while ( v8 < pV[16] );
+  }
+  v11 = pV[12];
+  if ( v11 )
+    pV[12] = v11 - (_DWORD)pV;
+  v12 = pV[15];
+  if ( v12 )
+    pV[15] = v12 - (_DWORD)pV;
+  v13 = pV[14];
+  if ( v13 )
+    pV[14] = v13 - (_DWORD)pV;
+  return result;
+}

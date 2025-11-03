@@ -1,0 +1,9 @@
+void __fastcall Sk8::Net::Test_XmlSerialize::Test_XmlSerialize(Sk8::Net::Test_XmlSerialize *this)
+{
+  Sk8::Net::IOnlineTest::IOnlineTest(this);
+  this->Sk8::Net::IOnlineTest::Sk8::Net::NetListener::Sk8::Net::IEventListener::__vftable = (Sk8::Net::Test_XmlSerialize_vtbl *)-2112395480;
+  this->Sk8::Net::IOnlineTest::Sk8::Net::NetListener::Sk8::Net::IHTTPRequestListener::__vftable = (Sk8::Net::IHTTPRequestListener_vtbl *)-2112395924;
+  this->Sk8::Net::IOnlineTest::Sk8::Net::NetListener::Sk8::Net::ITransactionListener::__vftable = (Sk8::Net::ITransactionListener_vtbl *)-2112395488;
+  this->Sk8::Net::IOnlineTest::Sk8::Net::NetListener::Sk8::Net::IMessageListener::__vftable = (Sk8::Net::IMessageListener_vtbl *)-2112396224;
+  this->Sk8::Net::IOnlineTest::Sk8::Net::PtrBase::__vftable = (Sk8::Net::PtrBase_vtbl *)-2112395256;
+}

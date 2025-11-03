@@ -1,0 +1,8 @@
+unsigned int __fastcall pegasus::tIrradianceData::Fixup(
+        pegasus::tIrradianceProbeData **pV,
+        rw::core::arena::ArenaIterator *pIterator)
+{
+  if ( pV[1] )
+    pegasus::Offset2Addr<rw::math::vpu::Matrix44>(pV, pV + 1);
+  return 1;
+}

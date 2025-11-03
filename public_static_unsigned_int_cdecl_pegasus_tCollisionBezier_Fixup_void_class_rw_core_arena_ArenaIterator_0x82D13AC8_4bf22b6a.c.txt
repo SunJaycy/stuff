@@ -1,0 +1,33 @@
+unsigned int __fastcall pegasus::tCollisionBezier::Fixup(void *ptr, rw::core::arena::ArenaIterator *iterator)
+{
+  bool v3; // r3
+  bool v4; // r3
+
+  if ( iterator->m_arena )
+    v3 = 0;
+  else
+    v3 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F3598[924],
+           &byte_822F3598[856],
+           &byte_822F3598[820],
+           0x85u,
+           0,
+           0,
+           1u);
+  if ( v3 )
+    DebugBreak();
+  if ( iterator->m_arena )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F3598[1052],
+           &byte_822F3598[984],
+           &byte_822F3598[948],
+           0x96u,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  return 1;
+}

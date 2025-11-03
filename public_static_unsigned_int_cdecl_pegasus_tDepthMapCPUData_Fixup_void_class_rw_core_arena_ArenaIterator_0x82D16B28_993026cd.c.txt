@@ -1,0 +1,8 @@
+unsigned int __fastcall pegasus::tDepthMapCPUData::Fixup(
+        pegasus::tIrradianceProbeData **ptr,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::Offset2Addr<rw::math::vpu::Matrix44>(ptr, ptr + 9);
+  pegasus::Offset2Addr<rw::math::vpu::Matrix44>(ptr, ptr + 11);
+  return 1;
+}

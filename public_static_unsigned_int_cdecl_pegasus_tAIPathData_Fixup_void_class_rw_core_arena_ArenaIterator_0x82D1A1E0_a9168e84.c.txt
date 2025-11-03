@@ -1,0 +1,4 @@
+void __fastcall pegasus::tAIPathData::Fixup(void *pV, rw::core::arena::ArenaIterator *pIterator)
+{
+  JUMPOUT(0x834598B8);
+}

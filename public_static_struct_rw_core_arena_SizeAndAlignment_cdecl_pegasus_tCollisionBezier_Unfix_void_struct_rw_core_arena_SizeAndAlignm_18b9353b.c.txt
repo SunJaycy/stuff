@@ -1,0 +1,21 @@
+rw::core::arena::SizeAndAlignment *__fastcall pegasus::tCollisionBezier::Unfix(
+        void *ptr,
+        rw::core::arena::SizeAndAlignment *offset)
+{
+  bool v3; // r3
+
+  if ( offset->iterator->m_arena )
+    v3 = 0;
+  else
+    v3 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F3598[788],
+           &byte_822F3598[720],
+           &byte_822F3598[684],
+           0x68u,
+           0,
+           0,
+           1u);
+  if ( v3 )
+    DebugBreak();
+  return offset;
+}

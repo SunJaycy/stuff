@@ -1,0 +1,15 @@
+float __fastcall ICELITEManager::GetAnimElevationFixup(ICELITEManager *this, const ICELITE::Vector3 *position)
+{
+  ICELITEScene *v3; // r3
+  double v4; // fp1
+
+  v3 = TheICELITESceneManager->GetActiveScene(TheICELITESceneManager);
+  if ( v3 && v3->IsCameraFixingElevation(v3) )
+    v4 = (float)((float)((double (__fastcall *)(ICELITEWorldManager *, double))TheICELITEWorldManager->GetGroundElevation)(
+                          TheICELITEWorldManager,
+                          this->mSceneElevation)
+               - this->mSceneElevation);
+  else
+    v4 = 0.0;
+  return *((float *)&v4 + 1);
+}

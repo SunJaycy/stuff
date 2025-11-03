@@ -1,0 +1,8 @@
+void __fastcall rw::collision::ClusteredMesh::GetVertex(
+        rw::collision::ClusteredMesh *this,
+        rw::math::vpu::Vector3 *result,
+        unsigned int index,
+        unsigned __int8 vertid)
+{
+  JUMPOUT(0x834598B8);
+}

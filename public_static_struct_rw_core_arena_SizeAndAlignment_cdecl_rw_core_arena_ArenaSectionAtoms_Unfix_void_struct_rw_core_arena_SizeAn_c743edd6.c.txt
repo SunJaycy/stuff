@@ -1,0 +1,4 @@
+void __fastcall rw::core::arena::ArenaSectionAtoms::Unfix(void *obj, rw::core::arena::SizeAndAlignment *unfixContext)
+{
+  JUMPOUT(0x834598B8);
+}

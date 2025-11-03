@@ -1,0 +1,7 @@
+void __fastcall DataSystem::DataTracker::Serializer_Implementation::Serialize(
+        DataSystem::DataTracker::Serializer_Implementation *this,
+        void *outbuffer,
+        int outbuffersize)
+{
+  JUMPOUT(0x834598B8);
+}

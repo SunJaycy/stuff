@@ -1,0 +1,13 @@
+rw::core::arena::SizeAndAlignment *__fastcall pegasus::tIrradianceData::Unfix(
+        _DWORD *pV,
+        rw::core::arena::SizeAndAlignment *pOffset)
+{
+  rw::core::arena::SizeAndAlignment *result; // r3
+  int v4; // r10
+
+  result = pOffset;
+  v4 = pV[1];
+  if ( v4 )
+    pV[1] = v4 - (_DWORD)pV;
+  return result;
+}

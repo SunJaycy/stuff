@@ -1,0 +1,60 @@
+rw::core::arena::SizeAndAlignment *__fastcall pegasus::tGrabData::Unfix(
+        void *ptr,
+        rw::core::arena::SizeAndAlignment *offset)
+{
+  bool v4; // r3
+  int v5; // r11
+  int v6; // r10
+  int v7; // r9
+  int v8; // r9
+  int v9; // r9
+  _DWORD *v10; // r11
+  int v11; // r9
+  int v12; // r9
+
+  if ( offset->iterator->m_arena )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F3598[1712],
+           &byte_822F3598[1652],
+           &byte_822F3598[1624],
+           0x79u,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  v5 = *((_DWORD *)ptr + 4);
+  v6 = *(_DWORD *)ptr;
+  if ( v5 )
+    *((_DWORD *)ptr + 4) = v5 - (_DWORD)ptr;
+  v7 = *((_DWORD *)ptr + 5);
+  if ( v7 )
+    *((_DWORD *)ptr + 5) = v7 - (_DWORD)ptr;
+  v8 = *((_DWORD *)ptr + 6);
+  if ( v8 )
+    *((_DWORD *)ptr + 6) = v8 - (_DWORD)ptr;
+  v9 = *((_DWORD *)ptr + 7);
+  if ( v9 )
+    *((_DWORD *)ptr + 7) = v9 - (_DWORD)ptr;
+  if ( v6 )
+  {
+    v10 = (_DWORD *)(v5 + 52);
+    do
+    {
+      v11 = *(v10 - 1);
+      if ( v11 )
+        *(v10 - 1) = v11 - (_DWORD)ptr;
+      if ( *v10 )
+        *v10 -= ptr;
+      v12 = v10[1];
+      if ( v12 )
+        v10[1] = v12 - (_DWORD)ptr;
+      --v6;
+      v10 += 20;
+    }
+    while ( v6 );
+  }
+  return offset;
+}

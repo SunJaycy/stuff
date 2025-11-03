@@ -1,0 +1,7 @@
+int __fastcall DataSystem::Serialization::Serializer::Serialize(
+        DataSystem::Serialization::Serializer *this,
+        void *outbuffer,
+        int outbuffersize)
+{
+  return DataSystem::Serialization::Serializer_Implementation::Serialize(this->pImpl, outbuffer, outbuffersize);
+}

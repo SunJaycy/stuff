@@ -1,0 +1,24 @@
+rw::core::arena::SizeAndAlignment *__fastcall pegasus::tWorldPainterQuadTreeData::Unfix(
+        void *ptr,
+        rw::core::arena::SizeAndAlignment *offset)
+{
+  bool v4; // r3
+  rw::core::arena::SizeAndAlignment *result; // r3
+
+  if ( offset->iterator->m_arena )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F5B90[2652],
+           &byte_822F5B90[2584],
+           &byte_822F5B90[2540],
+           0x5Fu,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  result = offset;
+  *((_DWORD *)ptr + 9) -= ptr;
+  return result;
+}

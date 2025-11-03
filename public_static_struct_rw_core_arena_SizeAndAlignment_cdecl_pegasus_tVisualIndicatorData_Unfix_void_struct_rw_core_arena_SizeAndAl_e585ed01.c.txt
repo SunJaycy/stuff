@@ -1,0 +1,40 @@
+rw::core::arena::SizeAndAlignment *__fastcall pegasus::tVisualIndicatorData::Unfix(
+        void *ptr,
+        rw::core::arena::SizeAndAlignment *offset)
+{
+  bool v4; // r3
+  int v5; // r10
+  int v6; // r11
+  _DWORD *v7; // r11
+
+  if ( offset->iterator->m_arena )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F5B90[352],
+           &byte_822F5B90[280],
+           &byte_822F5B90[240],
+           0x59u,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  v5 = *(_DWORD *)ptr;
+  v6 = *((_DWORD *)ptr + 2);
+  *((_DWORD *)ptr + 2) = v6 - (_DWORD)ptr;
+  *((_DWORD *)ptr + 3) -= ptr;
+  if ( v5 )
+  {
+    v7 = (_DWORD *)(v6 + 56);
+    do
+    {
+      if ( *v7 )
+        *v7 -= ptr;
+      --v5;
+      v7 += 16;
+    }
+    while ( v5 );
+  }
+  return offset;
+}

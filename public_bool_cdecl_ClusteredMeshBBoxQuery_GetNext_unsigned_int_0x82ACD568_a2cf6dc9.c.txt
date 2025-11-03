@@ -1,0 +1,26 @@
+int __fastcall ClusteredMeshBBoxQuery::GetNext(ClusteredMeshBBoxQuery *this, unsigned int *entry)
+{
+  int result; // r3
+  unsigned int v5; // r9
+
+  if ( this->mResultCount )
+  {
+LABEL_4:
+    result = 1;
+    *entry = this->mNextEntry;
+    v5 = this->mResultCount - 1;
+    ++this->mNextEntry;
+    this->mResultCount = v5;
+  }
+  else
+  {
+    while ( this->mBranchStack.mTop )
+    {
+      ClusteredMeshBBoxQuery::ProcessBranchNode(this);
+      if ( this->mResultCount )
+        goto LABEL_4;
+    }
+    return 0;
+  }
+  return result;
+}

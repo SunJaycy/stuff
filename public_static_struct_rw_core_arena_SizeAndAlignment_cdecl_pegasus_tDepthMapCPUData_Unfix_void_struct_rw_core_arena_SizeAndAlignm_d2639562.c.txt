@@ -1,0 +1,11 @@
+rw::core::arena::SizeAndAlignment *__fastcall pegasus::tDepthMapCPUData::Unfix(
+        void *ptr,
+        rw::core::arena::SizeAndAlignment *offset)
+{
+  rw::core::arena::SizeAndAlignment *result; // r3
+
+  result = offset;
+  *((_DWORD *)ptr + 9) -= ptr;
+  *((_DWORD *)ptr + 11) -= ptr;
+  return result;
+}

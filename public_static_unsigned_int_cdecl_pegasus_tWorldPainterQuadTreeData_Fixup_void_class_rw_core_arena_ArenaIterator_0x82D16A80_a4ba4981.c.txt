@@ -1,0 +1,22 @@
+unsigned int __fastcall pegasus::tWorldPainterQuadTreeData::Fixup(
+        pegasus::tIrradianceProbeData **ptr,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  bool v3; // r3
+
+  if ( iterator->m_arena )
+    v3 = 0;
+  else
+    v3 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F5B90[2796],
+           &byte_822F5B90[2728],
+           &byte_822F5B90[2684],
+           0x85u,
+           0,
+           0,
+           1u);
+  if ( v3 )
+    DebugBreak();
+  pegasus::Offset2Addr<rw::math::vpu::Matrix44>(ptr, ptr + 9);
+  return 1;
+}

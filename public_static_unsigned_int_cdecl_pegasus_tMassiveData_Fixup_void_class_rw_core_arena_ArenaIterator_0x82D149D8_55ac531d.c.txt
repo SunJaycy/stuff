@@ -1,0 +1,4 @@
+void __fastcall pegasus::tMassiveData::Fixup(void *ptr, rw::core::arena::ArenaIterator *iterator)
+{
+  JUMPOUT(0x834598B8);
+}

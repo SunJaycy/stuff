@@ -1,0 +1,4 @@
+void __fastcall EA::ArenaDictionary::Unfix(void *pointer, rw::core::arena::SizeAndAlignment *offset)
+{
+  JUMPOUT(0x834598B8);
+}

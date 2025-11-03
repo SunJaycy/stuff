@@ -1,0 +1,33 @@
+unsigned int __fastcall pegasus::tVersionData::Fixup(void *ptr, rw::core::arena::ArenaIterator *iterator)
+{
+  bool v3; // r3
+  bool v4; // r3
+
+  if ( iterator->m_arena )
+    v3 = 0;
+  else
+    v3 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F5B90[96],
+           &byte_822F5B90[32],
+           byte_822F5B90,
+           0x5Fu,
+           0,
+           0,
+           1u);
+  if ( v3 )
+    DebugBreak();
+  if ( iterator->m_arena )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_822F5B90[216],
+           &byte_822F5B90[152],
+           &byte_822F5B90[120],
+           0x68u,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  return 1;
+}

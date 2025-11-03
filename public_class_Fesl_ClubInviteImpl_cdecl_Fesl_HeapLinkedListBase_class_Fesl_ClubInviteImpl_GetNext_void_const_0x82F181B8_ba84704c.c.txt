@@ -1,0 +1,16 @@
+plasma_eastl::pair<Fesl::UserImpl,plasma_eastl::set<Fesl::UserContext,plasma_eastl::less<Fesl::UserContext>,plasma_eastl::allocator> > *__fastcall Fesl::HeapLinkedListBase<Fesl::ClubInviteImpl>::GetNext(
+        Fesl::HeapLinkedListBase<plasma_eastl::pair<Fesl::UserImpl,plasma_eastl::set<Fesl::UserContext,plasma_eastl::less<Fesl::UserContext>,plasma_eastl::allocator> > > *this,
+        void **pos)
+{
+  int v3; // [sp+C0h] [+50h]
+  _DWORD *v4; // [sp+C4h] [+54h]
+
+  v3 = 0;
+  if ( *pos )
+  {
+    v4 = *pos;
+    v3 = (*(int (__fastcall **)(_DWORD *))(*v4 + 4))(v4);
+    *pos = (void *)v4[1];
+  }
+  return (plasma_eastl::pair<Fesl::UserImpl,plasma_eastl::set<Fesl::UserContext,plasma_eastl::less<Fesl::UserContext>,plasma_eastl::allocator> > *)v3;
+}

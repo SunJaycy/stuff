@@ -1,0 +1,38 @@
+rw::core::arena::SizeAndAlignment *__fastcall rw::core::arena::ArenaSectionSubreferences::Unfix(
+        void *obj,
+        rw::core::arena::SizeAndAlignment *offset)
+{
+  bool v3; // r3
+  bool v4; // r3
+  rw::core::arena::SizeAndAlignment *result; // r3
+
+  if ( obj )
+    v3 = 0;
+  else
+    v3 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_8248B0D0[144],
+           &byte_8248B0D0[56],
+           byte_8248B0D0,
+           0x457u,
+           0,
+           0,
+           1u);
+  if ( v3 )
+    DebugBreak();
+  if ( offset )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_8248B0D0[288],
+           &byte_8248B0D0[200],
+           &byte_8248B0D0[148],
+           0x458u,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  result = offset;
+  offset->extraSize += 28;
+  return result;
+}
