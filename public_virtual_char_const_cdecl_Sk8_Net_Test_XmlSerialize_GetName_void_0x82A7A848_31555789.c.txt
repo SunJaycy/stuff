@@ -1,0 +1,4 @@
+char *__fastcall Sk8::Net::Test_XmlSerialize::GetName(Sk8::Net::Test_XmlSerialize *this)
+{
+  return (char *)-2112395460;
+}

@@ -1,0 +1,7 @@
+void __fastcall pegasus::tTriggerInstanceData::Refix(
+        void *ptr,
+        void *__formal,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tTriggerInstanceData::Fixup(ptr, iterator);
+}

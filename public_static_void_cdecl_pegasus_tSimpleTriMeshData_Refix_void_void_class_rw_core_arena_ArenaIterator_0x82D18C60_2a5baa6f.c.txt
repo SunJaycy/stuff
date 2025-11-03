@@ -1,0 +1,4 @@
+void __fastcall pegasus::tSimpleTriMeshData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tSimpleTriMeshData::Fixup(ptr, iterator);
+}

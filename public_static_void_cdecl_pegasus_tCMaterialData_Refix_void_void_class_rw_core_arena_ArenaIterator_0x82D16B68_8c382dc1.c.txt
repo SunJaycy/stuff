@@ -1,0 +1,4 @@
+void __fastcall pegasus::tCMaterialData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tCMaterialData::Fixup(ptr, iterator);
+}

@@ -1,0 +1,4 @@
+void __fastcall pegasus::tHotPointData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tHotPointData::Fixup(ptr, iterator);
+}

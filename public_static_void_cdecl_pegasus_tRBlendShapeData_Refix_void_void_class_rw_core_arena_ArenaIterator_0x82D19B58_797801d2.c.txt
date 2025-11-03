@@ -1,0 +1,4 @@
+void __fastcall pegasus::tRBlendShapeData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tRBlendShapeData::Fixup(ptr, iterator);
+}

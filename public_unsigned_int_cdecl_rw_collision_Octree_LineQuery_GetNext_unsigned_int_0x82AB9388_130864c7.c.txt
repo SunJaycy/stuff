@@ -1,0 +1,4 @@
+void __fastcall rw::collision::Octree::LineQuery::GetNext(rw::collision::Octree::LineQuery *this, unsigned int *entry)
+{
+  JUMPOUT(0x834598B8);
+}

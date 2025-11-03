@@ -1,0 +1,7 @@
+void __fastcall pegasus::tEmitterWayPointData::Refix(
+        void *ptr,
+        void *__formal,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tEmitterWayPointData::Fixup(ptr, iterator);
+}

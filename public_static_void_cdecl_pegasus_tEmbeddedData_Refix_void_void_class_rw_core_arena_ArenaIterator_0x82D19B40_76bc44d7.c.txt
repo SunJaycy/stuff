@@ -1,0 +1,4 @@
+void __fastcall pegasus::tEmbeddedData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tEmbeddedData::Fixup(ptr, iterator);
+}

@@ -1,0 +1,4 @@
+void __fastcall pegasus::tCollisionBezier::Refix(void *ptr, void *base, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tCollisionBezier::Fixup(ptr, iterator);
+}

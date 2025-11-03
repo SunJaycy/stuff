@@ -1,0 +1,4 @@
+void __fastcall pegasus::tAIPathData::Refix(void *pV, void *pOffset, rw::core::arena::ArenaIterator *pIterator)
+{
+  pegasus::tAIPathData::Fixup(pV, pIterator);
+}

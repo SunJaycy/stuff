@@ -1,0 +1,4 @@
+void __fastcall pegasus::tRAINData::Refix(void *pV, void *pOffset, rw::core::arena::ArenaIterator *pIterator)
+{
+  pegasus::tRAINData::Fixup(pV, pIterator);
+}

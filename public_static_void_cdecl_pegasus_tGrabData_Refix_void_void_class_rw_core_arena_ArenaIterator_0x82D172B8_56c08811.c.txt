@@ -1,0 +1,4 @@
+void __fastcall pegasus::tGrabData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tGrabData::Fixup(ptr, iterator);
+}

@@ -1,0 +1,7 @@
+void __fastcall rw::core::arena::ArenaSectionManifest::Refix(
+        void *obj,
+        void *offset,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  JUMPOUT(0x834598B8);
+}

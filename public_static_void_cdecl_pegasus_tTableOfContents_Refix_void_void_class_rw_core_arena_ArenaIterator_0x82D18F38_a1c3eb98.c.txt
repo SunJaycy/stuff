@@ -1,0 +1,4 @@
+void __fastcall pegasus::tTableOfContents::Refix(void *pV, void *pOffset, rw::core::arena::ArenaIterator *pIterator)
+{
+  pegasus::tTableOfContents::Fixup(pV, pIterator);
+}

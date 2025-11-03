@@ -1,0 +1,4 @@
+void __fastcall pegasus::tLocationDescData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tLocationDescData::Fixup(ptr, iterator);
+}

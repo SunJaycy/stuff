@@ -1,0 +1,4 @@
+void __fastcall pegasus::tRollerDescData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tRollerDescData::Fixup(ptr, iterator);
+}

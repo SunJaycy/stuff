@@ -1,0 +1,28 @@
+unsigned int __fastcall rw::collision::KDTreeBBoxQuery::GetNext(
+        rw::collision::KDTreeBBoxQuery *this,
+        unsigned int *entry)
+{
+  unsigned int result; // r3
+  unsigned int v5; // r9
+
+  if ( this->m_resultCount )
+  {
+LABEL_4:
+    result = 1;
+    *entry = this->m_nextEntry;
+    v5 = this->m_resultCount - 1;
+    ++this->m_nextEntry;
+    this->m_resultCount = v5;
+  }
+  else
+  {
+    while ( this->m_top )
+    {
+      rw::collision::KDTreeBBoxQueryBase::ProcessBranchNode(this);
+      if ( this->m_resultCount )
+        goto LABEL_4;
+    }
+    return 0;
+  }
+  return result;
+}

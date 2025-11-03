@@ -1,0 +1,44 @@
+BOOL __fastcall renderengine::MeshHelper::Fixup(
+        renderengine::MeshHelper *ptr,
+        rw::core::arena::ArenaIterator *context,
+        int a3,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        __int64 a9,
+        __int64 a10,
+        __int64 a11,
+        __int64 a12,
+        __int64 a13,
+        __int64 a14,
+        __int64 a15,
+        __int64 a16,
+        __int64 a17,
+        __int128 a18)
+{
+  bool v20; // r3
+
+  if ( ptr )
+    v20 = 0;
+  else
+    v20 = rw::core::debug::CallDebugPrintAssertCallback(
+            "NULL != ptr",
+            "D:\\sk82\\main\\packages\\rw\\renderengine_base\\1.04.03\\include\\cmn\\renderengine/meshhelper.h",
+            "renderengine::MeshHelper::Fixup",
+            0x60u,
+            0,
+            0,
+            1u);
+  if ( v20 )
+    DebugBreak();
+  rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>(
+    (rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> *)&a18,
+    ptr,
+    context->m_arena);
+  EA::Serialization::BaseArchive<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter>>::operator&<renderengine::MeshHelper>(
+    (EA::Serialization::BaseArchive<rw::core::arena::basic_fixup_archive<EA::Serialization::Endian::InPlaceNativeEndianConverter> > *)&a18,
+    ptr);
+  return HIDWORD(a18) == 0;
+}

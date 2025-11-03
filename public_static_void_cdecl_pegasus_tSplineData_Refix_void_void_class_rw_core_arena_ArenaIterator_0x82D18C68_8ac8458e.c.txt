@@ -1,0 +1,4 @@
+void __fastcall pegasus::tSplineData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tSplineData::Fixup(ptr, iterator);
+}

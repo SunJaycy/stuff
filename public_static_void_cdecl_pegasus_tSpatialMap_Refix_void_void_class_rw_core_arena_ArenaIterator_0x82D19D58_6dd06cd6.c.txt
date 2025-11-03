@@ -1,0 +1,4 @@
+void __fastcall pegasus::tSpatialMap::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tSpatialMap::Fixup(ptr, iterator);
+}

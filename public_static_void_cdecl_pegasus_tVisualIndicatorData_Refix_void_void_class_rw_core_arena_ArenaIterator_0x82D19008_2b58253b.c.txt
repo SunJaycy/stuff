@@ -1,0 +1,7 @@
+void __fastcall pegasus::tVisualIndicatorData::Refix(
+        void *ptr,
+        void *__formal,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tVisualIndicatorData::Fixup(ptr, iterator);
+}

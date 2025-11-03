@@ -1,0 +1,4 @@
+void __fastcall pegasus::tAntiFrustumData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tAntiFrustumData::Fixup(ptr, iterator);
+}

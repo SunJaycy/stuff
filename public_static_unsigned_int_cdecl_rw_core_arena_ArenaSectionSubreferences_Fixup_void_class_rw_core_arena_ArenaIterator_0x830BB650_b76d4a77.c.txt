@@ -1,0 +1,4 @@
+void __fastcall rw::core::arena::ArenaSectionSubreferences::Fixup(void *obj, rw::core::arena::ArenaIterator *iterator)
+{
+  JUMPOUT(0x834598B8);
+}

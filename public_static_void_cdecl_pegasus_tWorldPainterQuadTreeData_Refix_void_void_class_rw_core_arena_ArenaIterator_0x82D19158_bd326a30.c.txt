@@ -1,0 +1,7 @@
+void __fastcall pegasus::tWorldPainterQuadTreeData::Refix(
+        pegasus::tIrradianceProbeData **ptr,
+        void *__formal,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tWorldPainterQuadTreeData::Fixup(ptr, iterator);
+}

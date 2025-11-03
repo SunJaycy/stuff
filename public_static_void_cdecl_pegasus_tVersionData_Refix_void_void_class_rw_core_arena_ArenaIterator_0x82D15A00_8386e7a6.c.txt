@@ -1,0 +1,4 @@
+void __fastcall pegasus::tVersionData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tVersionData::Fixup(ptr, iterator);
+}

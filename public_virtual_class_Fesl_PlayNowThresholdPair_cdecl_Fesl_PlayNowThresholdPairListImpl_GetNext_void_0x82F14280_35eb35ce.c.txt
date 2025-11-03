@@ -1,0 +1,13 @@
+Fesl::PlayNowThresholdPairImpl *__fastcall Fesl::PlayNowThresholdPairListImpl::GetNext(
+        Fesl::PlayNowThresholdPairListImpl *this)
+{
+  unsigned int mIterIndex; // [sp+C4h] [+54h]
+
+  if ( this->mIterIndex >= plasma_eastl::vector<Fesl::PlayNowThresholdPairImpl,plasma_eastl::allocator>::size(&this->mList) )
+    return 0;
+  mIterIndex = this->mIterIndex;
+  this->mIterIndex = mIterIndex + 1;
+  return plasma_eastl::vector<Fesl::PlayNowThresholdPairImpl,plasma_eastl::allocator>::operator[](
+           &this->mList,
+           mIterIndex);
+}

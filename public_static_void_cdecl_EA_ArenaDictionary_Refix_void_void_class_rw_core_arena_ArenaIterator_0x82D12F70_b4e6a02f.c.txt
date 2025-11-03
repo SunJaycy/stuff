@@ -1,0 +1,4 @@
+void __fastcall EA::ArenaDictionary::Refix(void *pointer, void *offset, rw::core::arena::ArenaIterator *iterator)
+{
+  JUMPOUT(0x834598B8);
+}

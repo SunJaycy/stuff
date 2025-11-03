@@ -1,0 +1,6 @@
+void __fastcall visualdebugger::AttributeArray<visualdebugger::AttributePropertyFloat>::Serialize(
+        visualdebugger::AttributeArray<visualdebugger::AttributePropertyFloat> *this,
+        visualdebugger::ISerializable::Buffer *buffer)
+{
+  JUMPOUT(0x834598B8);
+}

@@ -1,0 +1,4 @@
+void __fastcall pegasus::tNavMesh2Data::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tNavMesh2Data::Fixup(ptr, iterator);
+}

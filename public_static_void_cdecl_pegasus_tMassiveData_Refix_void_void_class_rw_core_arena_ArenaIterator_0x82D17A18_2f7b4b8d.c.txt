@@ -1,0 +1,4 @@
+void __fastcall pegasus::tMassiveData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tMassiveData::Fixup(ptr, iterator);
+}

@@ -1,0 +1,7 @@
+void __fastcall pegasus::tWorldPainterLayerData::Refix(
+        unsigned int *ptr,
+        void *__formal,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tWorldPainterLayerData::Fixup(ptr, iterator);
+}

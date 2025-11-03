@@ -1,0 +1,35 @@
+unsigned int __fastcall rw::core::arena::ArenaSectionAtoms::Fixup(
+        _DWORD *obj,
+        rw::core::arena::ArenaIterator *fixupContext)
+{
+  bool v4; // r3
+  unsigned int v5; // r11
+  rw::core::atom::StaticAtomTable *v6; // r3
+
+  if ( obj )
+    v4 = 0;
+  else
+    v4 = rw::core::debug::CallDebugPrintAssertCallback(
+           &byte_8248B0D0[3088],
+           &byte_8248B0D0[3000],
+           &byte_8248B0D0[2956],
+           0x573u,
+           0,
+           0,
+           1u);
+  if ( v4 )
+    DebugBreak();
+  v5 = obj[2];
+  if ( v5 )
+  {
+    v6 = *(rw::core::atom::StaticAtomTable **)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fixupContext->m_arena->sections->dict
+                                                                       + 1)
+                                                                     + 8)
+                                                         + ((v5 >> 20) & 0xFFC))
+                                             + 8 * ((v5 & 0x3FFFFF) + ((2 * v5) & 0x7FFFFE)));
+    obj[2] = v6;
+    rw::core::atom::StaticAtomTable::Fixup(v6, fixupContext);
+    fixupContext->m_fixupAtomTable = (const rw::core::atom::StaticAtomTable *)obj[2];
+  }
+  return 1;
+}

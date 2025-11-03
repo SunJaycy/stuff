@@ -1,0 +1,7 @@
+void __fastcall pegasus::tWorldPainterDictionaryData::Refix(
+        void *ptr,
+        void *__formal,
+        rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tWorldPainterDictionaryData::Fixup(ptr, iterator);
+}

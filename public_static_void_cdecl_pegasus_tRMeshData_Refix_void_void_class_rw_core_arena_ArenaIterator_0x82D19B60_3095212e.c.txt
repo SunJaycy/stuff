@@ -1,0 +1,4 @@
+void __fastcall pegasus::tRMeshData::Refix(void *ptr, void *__formal, rw::core::arena::ArenaIterator *iterator)
+{
+  pegasus::tRMeshData::Fixup(ptr, iterator);
+}
